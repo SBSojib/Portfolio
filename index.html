@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">MHI.</a>
+            <a href="#" class="logo">MD Hasibul Islam</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -34,7 +34,30 @@
             <p class="greeting">Hello, I'm</p>
             <h1 class="name">MD Hasibul Islam</h1>
             <h2 class="title">Infrastructure Software Engineer</h2>
-            <p class="bio">Specializing in Cloud Infrastructure, Kubernetes, and DevOps Automation. Currently managing 40+ servers and ensuring 99.9% availability at Chaldal Limited.</p>
+            
+            <div class="hero-stats-container">
+                <div class="stat-item hero-stat">
+                    <span class="stat-number">40+</span>
+                    <span class="stat-label">Servers Managed</span>
+                </div>
+                <div class="stat-item hero-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Microservices</span>
+                </div>
+                <div class="stat-item hero-stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="stat-item hero-stat">
+                    <i class="fas fa-cloud stat-icon"></i>
+                    <span class="stat-label">Cloud + On-Premise Infrastructure</span>
+                </div>
+                <div class="stat-item hero-stat">
+                    <i class="fas fa-cubes stat-icon"></i>
+                    <span class="stat-label">Kubernetes</span>
+                </div>
+            </div>
+
             <div class="hero-buttons">
                 <a href="#contact" class="btn primary-btn">Get in Touch</a>
                 <a href="Resume/resume.html" class="btn secondary-btn" target="_blank">View Resume</a>
@@ -50,27 +73,17 @@
         </div>
     </header>
 
+
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
+                <div class="about-image">
+                    <img src="hasibul_islam_image.jpg" alt="MD Hasibul Islam">
+                </div>
                 <div class="about-text">
                     <p>I am an Infrastructure Software Engineer based in Dhaka, Bangladesh, with a strong background in managing complex server environments and cloud infrastructure. My expertise lies in ensuring high availability, automating operational tasks, and optimizing cloud costs.</p>
                     <p>Currently at Chaldal Limited, the largest online grocery service in Bangladesh, I manage a hybrid infrastructure spanning multiple data centers and Azure cloud resources. I'm passionate about building resilient systems using Kubernetes, Azure DevOps, and Infrastructure as Code.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">40+</span>
-                        <span class="stat-label">Servers Managed</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Microservices</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">99.9%</span>
-                        <span class="stat-label">Uptime</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -79,51 +92,103 @@
     <section id="experience" class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">March 2023 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Infrastructure Software Engineer</h3>
-                        <h4>Chaldal Limited</h4>
-                        <p class="company-desc">Largest Online Grocery Service in Bangladesh (10M+ Customers)</p>
-                        
-                        <div class="experience-details">
-                            <div class="detail-group">
+            <div class="experience-container">
+                <div class="company-card">
+                    <div class="company-header-row">
+                        <div class="company-info">
+                            <h3>Infrastructure Software Engineer</h3>
+                            <h4>Chaldal Limited</h4>
+                            <p class="company-desc">Largest Online Grocery Service in Bangladesh (10M+ Customers)</p>
+                        </div>
+                        <div class="experience-date-badge">March 2023 - Present</div>
+                    </div>
+                    
+                    <div class="experience-details">
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-server"></i>
                                 <h5>Infrastructure Maintenance</h5>
-                                <ul>
-                                    <li>Managed 40+ mixed Windows and Linux servers across 4 data centers, achieving >99.9% availability.</li>
-                                    <li>Maintained networking across 4 data centers, 2 offices, and 22 warehouses.</li>
-                                    <li>Upgraded DB server storage with RAID to improve IOPS and fault tolerance.</li>
-                                </ul>
                             </div>
-                            
-                            <div class="detail-group">
+                            <ul>
+                                <li>Managed 40+ mixed Windows and Linux servers across 4 data centers, achieving >99.9% availability.</li>
+                                <li>Maintained networking across 4 data centers, 2 offices, and 22 warehouses.</li>
+                                <li>Upgraded DB server storage with RAID to improve IOPS and fault tolerance.</li>
+                                <li>Installed/configured a gateway switch to create a redundant gateway path.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-rocket"></i>
                                 <h5>Application Deployment</h5>
-                                <ul>
-                                    <li>Designed and operated production Kubernetes clusters running 50+ microservices.</li>
-                                    <li>Automated CI/CD pipelines in Azure DevOps with zero-downtime rollouts.</li>
-                                    <li>Managed Kubernetes networking, TLS certificates, secrets, and Ingress.</li>
-                                </ul>
                             </div>
+                            <ul>
+                                <li>Designed and operated production Kubernetes clusters across multiple data centers running 50+ microservices.</li>
+                                <li>Automated CI/CD pipelines in Azure DevOps integrating container build, registry publishing, and Kubernetes deployments with zero-downtime rollouts.</li>
+                                <li>Managed Kubernetes networking, TLS certificates, secrets, and service exposure through Ingress and internal routing.</li>
+                                <li>Troubleshot complex production issues involving cluster networking, API connectivity, and pod lifecycle failures.</li>
+                            </ul>
+                        </div>
 
-                            <div class="detail-group">
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-cloud"></i>
                                 <h5>Cloud Infrastructure (Azure)</h5>
-                                <ul>
-                                    <li>Managed Azure VMs, networking, and storage supporting production workloads.</li>
-                                    <li>Automated tasks using Azure CLI and DevOps pipelines.</li>
-                                    <li>Saved $1,000/month via Azure cost optimization strategies.</li>
-                                </ul>
                             </div>
+                            <ul>
+                                <li>Managed Azure cloud resources including Virtual Machines, networking, and storage supporting production workloads.</li>
+                                <li>Automated infrastructure and operational tasks using Azure CLI, Service Principals, and Azure DevOps pipelines.</li>
+                                <li>Implemented monitoring and diagnostics using Azure Application Insights for production applications.</li>
+                                <li>Saved $1,000/month via Azure cost optimization (Re-architected Azure Storage network path).</li>
+                            </ul>
+                        </div>
 
-                            <div class="detail-group">
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-database"></i>
                                 <h5>Database Maintenance</h5>
-                                <ul>
-                                    <li>Configured 4-replica SQL Server Availability Group.</li>
-                                    <li>Implemented automated backups (20+ DBs) with 99.9% success rate.</li>
-                                    <li>Reduced backup storage by 50% via automated cleanup.</li>
-                                </ul>
                             </div>
+                            <ul>
+                                <li>Configured a 4-replica SQL Server Availability Group for continuous service.</li>
+                                <li>Implemented automated onsite backups (20+ DBs) with a 99.9% success rate and encrypted offsite copies in Azure, reducing RPO to &lt;15 min.</li>
+                                <li>Deployed air-gapped backups on isolated servers, ensuring extra security.</li>
+                                <li>Reduced backup storage by 50% via automated cleanup and a custom backup cleaner.</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-id-card"></i>
+                                <h5>Identity & Directory Services</h5>
+                            </div>
+                            <ul>
+                                <li>Set up on-prem AD → Azure AD (Entra ID) synchronization.</li>
+                                <li>Deployed an offsite Read-Only Domain Controller (RODC) to improve security and local authentication.</li>
+                                <li>Integrated 160+ workstations for seamless domain access, automated software installs via GPOs.</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-chart-bar"></i>
+                                <h5>Monitoring & Logging</h5>
+                            </div>
+                            <ul>
+                                <li>Deployed a self-hosted Checkmk stack for hosts, apps, database backups, networks, and hardware.</li>
+                                <li>Set up Azure Application Insights and Log Analytics, configured 20+ alerts for cost spikes and app issues.</li>
+                                <li>Integrated SQL Server logs with Azure Arc for centralized monitoring.</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <i class="fas fa-cogs"></i>
+                                <h5>Automation and Documentation</h5>
+                            </div>
+                            <ul>
+                                <li>Authored 30+ PowerShell, Bash, and Python scripts to automate patching, backup rotation, and certificate renewal, cutting repetitive workload by 30%.</li>
+                                <li>Developed and maintained 25+ SOPs and runbooks (backup validation, incident response, VM provisioning), accelerated onboarding for junior admins.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
