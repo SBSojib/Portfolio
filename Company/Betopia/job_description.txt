@@ -1,0 +1,88 @@
+About the job
+Betopia Group is looking for System Engineer - Server & Infrastructure
+
+
+
+Key Points
+
+Betopia Group is a fast-growing family of 5000+ employees, operating locally and in international markets. We drive innovation, empower talent, and foster teamwork to build a brighter, sustainable future for our people, partners, and communities.
+Job Description / Responsibility
+
+Context:
+
+Betopia Limited is seeking a skilled and detail-oriented System Engineer – Server & Infrastructure to design, implement, manage, and support enterprise server and data center environments. The ideal candidate will have hands-on experience in enterprise servers, operating systems, virtualization platforms, storage solutions, backup systems, and infrastructure monitoring tools.
+This role involves implementation of customer projects, infrastructure optimization, troubleshooting, and operational support across enterprise environments.
+Job Responsibilities:
+
+1. Server Infrastructure (Dell / HPE):
+Install, configure, and maintain Dell and HPE rack/blade servers.
+Perform firmware upgrades and hardware health monitoring.
+Configure RAID, storage controllers, and server BIOS settings.
+Troubleshoot hardware-level issues and coordinate OEM support.
+Support data center rack deployment and infrastructure setup.
+2. Operating Systems (Windows & Linux):
+Install, configure, and manage Windows Server environments.
+Manage Active Directory, Group Policy, DNS, DHCP, and File Services.
+Install and administer Linux servers (RHEL / CentOS / Ubuntu).
+Perform patch management and OS hardening.
+Monitor system performance and troubleshoot OS-level issues.
+3. Virtualization Platforms:
+Deploy and manage Microsoft Hyper-V environments.
+Configure and administer VMware vSphere / ESXi clusters.
+Manage virtual machines, snapshots, resource pools, and HA settings.
+Perform VM migrations and capacity optimization.
+Support Red Hat Virtualization (if applicable).
+4. Enterprise Storage (Dell / HPE / NetApp):
+Configure SAN/NAS storage solutions.
+Manage LUN provisioning, zoning, and storage allocation.
+Monitor storage performance and capacity planning.
+Support storage expansion and troubleshooting.
+5. Backup & Disaster Recovery:
+Configure and manage backup solutions (Dell / HPE / Veeam).
+Monitor daily backup operations and reporting.
+Perform restoration testing and recovery drills.
+Assist in Disaster Recovery (DR) planning and documentation.
+6. Observability & Monitoring:
+Configure and monitor infrastructure using SolarWinds and ManageEngine.
+Monitor server performance (CPU, Memory, Disk, Network).
+Generate performance and availability reports.
+Investigate alerts and resolve incidents within SLA timelines.
+7. Project & Operational Responsibilities:
+Participate in infrastructure design and solution implementation.
+Prepare technical documentation (HLD, LLD, SOPs, As-Built).
+Provide L2 support and escalation handling.
+Coordinate with networking and security teams for integrated deployments.
+Ensure system uptime and compliance with best practices.
+Educational Requirements
+
+Bachelor of Science (BSc) in Computer Science & Engineering
+Bachelor of Science (BSc) in Electrical & Electronic Engineering
+Bachelor of Science (BSc) in Information Technology
+Bachelor of Science (BSc) in Computer Science
+Bachelor of Science (BSc)
+Experience Requirements
+
+2 to 5 year(s)
+The applicants should have experience in the following business area(s):
+Software Company,IT Enabled Service,Group of Companies
+Additional Requirements
+
+Strong knowledge of Windows Server and Linux administration.
+Hands-on experience in virtualization platforms (VMware / Hyper-V).
+Experience with enterprise backup solutions.Understanding of networking fundamentals (TCP/IP, DNS, VLAN basics).
+Microsoft (MCSA / Windows Server certifications).
+VMware VCP.
+RHCSA / RHCE.
+Veeam certification (VMCE).
+Server installation and troubleshooting.
+Active Directory & Group Policy management.
+VMware / Hyper-V administration.
+SAN/NAS configuration basics.
+Backup & Restore management.
+Infrastructure monitoring tools.
+Basic scripting (PowerShell / Bash – advantage).
+Strong troubleshooting and analytical skills.
+Ability to manage multiple systems simultaneously.
+Documentation and reporting expertise.
+Team collaboration and communication skills.
+Ability to work under pressure and meet project deadlines.

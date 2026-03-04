@@ -24,39 +24,38 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.3;
+            line-height: 1.35;
             color: var(--text-color);
             background-color: #f5f5f5;
             font-size: 9.5pt;
         }
 
         .container {
-            max-width: 210mm; /* A4 width */
-            margin: 20px auto;
+            max-width: 210mm;
+            margin: 8px auto 15px;
             background: white;
-            padding: 25px;
+            padding: 12px 25px 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            min-height: 297mm; /* A4 height */
         }
 
         /* Header */
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: 24pt;
+            font-size: 22pt;
             font-weight: 700;
             color: #000;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-transform: uppercase;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             font-size: 9pt;
             color: var(--light-text);
             flex-wrap: wrap;
@@ -76,12 +75,12 @@
         /* Layout */
         .main-content {
             display: flex;
-            gap: 30px;
+            gap: 24px;
         }
 
         .left-column {
             flex: 2;
-            padding-right: 10px;
+            padding-right: 12px;
         }
 
         .right-column {
@@ -90,31 +89,31 @@
 
         /* Section Headings */
         h2 {
-            font-size: 14pt;
-            color: #2c5ea8; /* Matches the blue in the image */
+            font-size: 12pt;
+            color: #2c5ea8;
             text-transform: uppercase;
-            border-bottom: 1px solid #eee; /* Subtle underline if needed, image doesn't show strong one but structure implies it */
-            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 8px;
             margin-top: 0;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         /* Experience Section */
         .job-header {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .company-name {
             font-weight: 700;
             color: #2c5ea8;
-            font-size: 11pt;
+            font-size: 10pt;
         }
 
         .job-title {
             font-weight: 400;
             color: #444;
-            font-size: 11pt;
+            font-size: 10pt;
             text-transform: uppercase;
         }
 
@@ -133,52 +132,53 @@
         }
 
         .experience-item {
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .experience-sub-section {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .sub-section-title {
             font-weight: 700;
-            font-size: 9.5pt;
+            font-size: 9pt;
             margin-bottom: 2px;
             color: #000;
         }
 
         ul {
             list-style-type: disc;
-            margin-left: 35px;
-            margin-bottom: 3px;
+            margin-left: 28px;
+            margin-bottom: 2px;
         }
 
         li {
-            margin-bottom: 1px;
+            margin-bottom: 2px;
             font-size: 9pt;
             color: #333;
         }
 
         /* Skills Section */
         .skills-section h3 {
-            font-size: 10pt;
+            font-size: 9pt;
             font-weight: 700;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
             color: #000;
         }
 
         .skills-section ul {
-            margin-left: 35px;
-            margin-bottom: 8px;
+            margin-left: 28px;
+            margin-bottom: 6px;
         }
         
         .skills-section li {
-             margin-bottom: 1px;
+            margin-bottom: 2px;
+            font-size: 9pt;
         }
 
         /* Education Section */
         .education-item {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .uni-name {
@@ -200,17 +200,36 @@
             color: #666;
         }
 
-        /* Print Styles */
+        /* Print Styles - A4: fit on one page; disable browser headers/footers & use 100% scale */
+        @page {
+            size: A4;
+            margin: 6mm;
+        }
         @media print {
-            body {
+            html, body {
+                margin: 0;
+                padding: 0;
                 background: white;
             }
             .container {
                 box-shadow: none;
                 margin: 0;
-                padding: 20px;
-                width: 100%;
+                padding: 6mm 8mm;
                 max-width: none;
+                width: 100%;
+            }
+            header {
+                page-break-after: avoid;
+            }
+            h2 {
+                page-break-after: avoid;
+            }
+            /* Allow sub-sections to break if needed - avoids forcing content to page 2 */
+            .experience-sub-section {
+                page-break-inside: auto;
+            }
+            .skills-section h3 {
+                page-break-after: avoid;
             }
             a {
                 text-decoration: none;
@@ -279,68 +298,71 @@
                 <div class="job-meta">March 2023 – Present | Dhaka, Bangladesh</div>
                 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Infrastructure Maintenance</div>
+                    <div class="sub-section-title">• Server Infrastructure</div>
                     <ul>
-                        <li>Managed 40+ mixed Windows and Linux servers across 4 data centers, achieving >99.9% availability.</li>
-                        <li>Maintained networking across 4 data centers, 2 offices, and 22 warehouses.</li>
-                        <li>Upgraded DB server storage with RAID to improve IOPS and fault tolerance.</li>
-                        <li>Installed/configured a gateway switch to create a redundant gateway path.</li>
+                        <li>Managed 40+ mixed Windows and Linux servers across 4 data centers (AA, CC, CA, SG), achieving >99.9% availability.</li>
+                        <li>Deployed and maintained Kubernetes clusters (k3s) on physical servers, deployed new servers for application hosting and database infrastructure.</li>
+                        <li>Configured RAID and storage controllers, upgraded DB server storage to improve IOPS and fault tolerance.</li>
+                        <li>Remote server management via IPMI, hardware health monitoring, datacenter rack deployment, firmware and connectivity troubleshooting.</li>
+                        <li>Maintained networking across 4 data centers, 2 offices, and 22 warehouses, installed gateway switches for redundant paths.</li>
                     </ul>
                 </div>
 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Application Deployment</div>
+                    <div class="sub-section-title">• Operating Systems (Windows & Linux)</div>
                     <ul>
-                        <li>Designed and operated production Kubernetes clusters across multiple data centers running 50+ microservices.</li>
-                        <li>Automated CI/CD pipelines in Azure DevOps integrating container build, registry publishing, and Kubernetes deployments with zero-downtime rollouts.</li>
-                        <li>Managed Kubernetes networking, TLS certificates, secrets, and service exposure through Ingress and internal routing.</li>
-                        <li>Troubleshot complex production issues involving cluster networking, API connectivity, and pod lifecycle failures.</li>
+                        <li>Installed, configured, and managed Windows Server 2019/2022, Ubuntu Server, and Rocky Linux environments.</li>
+                        <li>Managed Active Directory, Group Policy, DNS, DHCP, deployed RODC, Kerberos authentication and gMSA, Windows certificate management.</li>
+                        <li>Integrated 160+ workstations for domain access, automated software installs via GPOs, Windows and Linux service troubleshooting.</li>
+                        <li>Linux filesystem and disk management, container runtime debugging, patch management via automation, OS performance monitoring.</li>
                     </ul>
                 </div>
 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Cloud Infrastructure – Microsoft Azure</div>
+                    <div class="sub-section-title">• Virtualization</div>
                     <ul>
-                        <li>Managed Azure cloud resources including Virtual Machines, networking, and storage supporting production workloads</li>
-                        <li>Automated infrastructure and operational tasks using Azure CLI, Service Principals, and Azure DevOps pipelines.</li>
-                        <li>Implemented monitoring and diagnostics using Azure Application Insights for production applications.</li>
-                        <li>Saved $1,000/month via Azure cost optimization (Re-architected Azure Storage network path (Private Endpoint → secure Public access with allow-listed networks to eliminate Private Link charges)</li>
+                        <li>Managed Hyper-V environments (Windows VM hosting), Azure Virtual Machines supporting production workloads.</li>
+                        <li>VM troubleshooting, networking, and connectivity debugging.</li>
                     </ul>
                 </div>
 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Database Maintenance</div>
+                    <div class="sub-section-title">• Enterprise Storage</div>
                     <ul>
-                        <li>Configured a 4-replica SQL Server Availability Group for continuous service.</li>
-                        <li>Implemented automated onsite backups (20+ DBs) with a 99.9% success rate and encrypted offsite copies in Azure, reducing RPO to &lt;15 min.</li>
-                        <li>Deployed air-gapped backups on isolated servers, ensuring extra security.</li>
-                        <li>Reduced backup storage by 50% via automated cleanup and a custom backup cleaner.</li>
+                        <li>Managed SeaweedFS distributed storage, Kubernetes persistent volumes.</li>
+                        <li>Storage for SQL Server Availability Groups, backup storage infrastructure, storage troubleshooting and optimization.</li>
                     </ul>
                 </div>
 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Identity & Directory Services</div>
+                    <div class="sub-section-title">• Backup & Disaster Recovery</div>
                     <ul>
-                        <li>Set up on-prem AD → Azure AD (Entra ID) synchronization.</li>
-                        <li>Deployed an offsite Read-Only Domain Controller (RODC) to improve security and local authentication.</li>
-                        <li>Integrated 160+ workstations for seamless domain access, automated software installs via GPOs.</li>
+                        <li>Built automated SQL Server backup validation system, full/differential/log backup strategies, offsite backup storage (Egg.OffsiteBackups).</li>
+                        <li>Automated onsite backups (20+ DBs, 99.9% success), encrypted offsite copies in Azure (RPO &lt;15 min), air-gapped backups.</li>
                     </ul>
                 </div>
 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Monitoring & Logging</div>
+                    <div class="sub-section-title">• Monitoring & Observability</div>
                     <ul>
-                        <li>Deployed a self-hosted Checkmk stack for hosts, apps, database backups, networks, and hardware.</li>
-                        <li>Set up Azure Application Insights and Log Analytics, configured 20+ alerts for cost spikes and app issues</li>
-                        <li>Integrated SQL Server logs with Azure Arc for centralized monitoring.</li>
+                        <li>Deployed Checkmk for Linux/Windows servers, routers, switches, database backups, and hardware, SNMP monitoring.</li>
+                        <li>Azure Application Insights and Log Analytics, 20+ alerts, performance reports, incident resolution within SLA.</li>
                     </ul>
                 </div>
 
                 <div class="experience-sub-section">
-                    <div class="sub-section-title">• Automation and Documentation</div>
+                    <div class="sub-section-title">• Project & Operational Support</div>
                     <ul>
-                        <li>Authored 30+ PowerShell, Bash, and Python scripts to automate patching, backup rotation, and certificate renewal, cutting repetitive workload by 30%.</li>
-                        <li>Developed and maintained 25+ SOPs and runbooks (backup validation, incident response, VM provisioning), accelerated onboarding for junior admins.</li>
+                        <li>Designed multi-datacenter infrastructure and backup automation, prepared HLD, LLD, SOPs, runbooks.</li>
+                        <li>30+ PowerShell, Bash, and Python scripts for patching, backup rotation, certificate renewal, 25+ SOPs and runbooks.</li>
+                        <li>Production incident response, infrastructure troubleshooting, cross-team collaboration.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-sub-section">
+                    <div class="sub-section-title">• Additional</div>
+                    <ul>
+                        <li>4-replica SQL Server Availability Group, on-prem AD → Azure AD sync, MikroTik routers, VLANs, VPN, Azure infrastructure automation.</li>
                     </ul>
                 </div>
             </div>
@@ -349,69 +371,74 @@
         <div class="right-column">
             <h2>SKILLS</h2>
             <div class="skills-section">
-                <h3>• Platforms and Tools</h3>
-                <ul>
-                    <li>Kubernetes, Helm, Docker, Service Fabric</li>
-                    <li>Hyper-V</li>
-                    <li>Azure DevOps CI/CD</li>
-                    <li>Ansible</li>
-                </ul>
-
-                <h3>• Cloud (Azure & AWS)</h3>
-                <ul>
-                    <li>Azure VMs, VNets, NSGs/Firewalls, Route Tables</li>
-                    <li>Azure Storage (Blob, immutability, lifecycle management)</li>
-                    <li>Private Endpoints vs. secure Public access</li>
-                    <li>Azure Arc</li>
-                    <li>Log Analytics & KQL, Application Insights</li>
-                    <li>Azure Monitor alerts</li>
-                    <li>AWS EC2, RDS, S3</li>
-                </ul>
-
                 <h3>• Operating Systems</h3>
                 <ul>
-                    <li>Windows (Windows Server 2019/2022)</li>
-                    <li>Linux (Ubuntu Server 20.04/24.04)</li>
+                    <li>Windows Server 2019/2022</li>
+                    <li>Linux (Ubuntu, Rocky Linux)</li>
                 </ul>
 
-                <h3>• Identity Services</h3>
+                <h3>• Identity & Directory Services</h3>
                 <ul>
-                    <li>Microsoft Active Directory</li>
-                    <li>Azure Entra ID</li>
+                    <li>Active Directory, Group Policy, Kerberos, gMSA</li>
+                    <li>DNS, DHCP, Azure Entra ID, Windows certificates</li>
                 </ul>
 
-                <h3>• Networking</h3>
+                <h3>• Platforms & Virtualization</h3>
                 <ul>
-                    <li>Load Balancers, WireGuard VPN</li>
-                    <li>DHCP / DNS, BGP</li>
+                    <li>Kubernetes (k3s), Helm, Docker, Service Fabric</li>
+                    <li>Hyper-V, Azure Virtual Machines</li>
+                    <li>IPMI, remote server management</li>
+                    <li>Azure DevOps CI/CD, Ansible</li>
                 </ul>
 
-                <h3>• Scripting</h3>
+                <h3>• Storage</h3>
                 <ul>
-                    <li>PowerShell, Bash, Python</li>
+                    <li>RAID, storage configuration</li>
+                    <li>SeaweedFS, Kubernetes persistent volumes</li>
+                </ul>
+
+                <h3>• Backup & Disaster Recovery</h3>
+                <ul>
+                    <li>SQL Server backup architecture</li>
+                    <li>Automated backup validation, restore testing, DR planning</li>
                 </ul>
 
                 <h3>• Monitoring</h3>
                 <ul>
-                    <li>Checkmk, Azure Monitor</li>
+                    <li>Checkmk, Azure Monitor, SNMP</li>
+                    <li>Log Analytics & KQL, Application Insights</li>
+                </ul>
+
+                <h3>• Cloud (Azure & AWS)</h3>
+                <ul>
+                    <li>Azure VMs, VNets, NSGs/Firewalls, Storage, Arc</li>
+                    <li>AWS EC2, RDS, S3</li>
+                </ul>
+
+                <h3>• Networking</h3>
+                <ul>
+                    <li>MikroTik routers, VLANs, GRE tunnels</li>
+                    <li>Load Balancers, WireGuard VPN, TCP/IP, BGP</li>
+                </ul>
+
+                <h3>• Scripting & Automation</h3>
+                <ul>
+                    <li>PowerShell, Bash, Python</li>
                 </ul>
 
                 <h3>• Databases</h3>
                 <ul>
-                    <li>SQL Server 2019 / 2022</li>
-                    <li>High Availability Clustering</li>
-                    <li>DB Backups Management</li>
-                    <li>SSRS</li>
-                    <li>Redis Stack</li>
+                    <li>SQL Server 2019/2022, HA Clustering</li>
+                    <li>DB Backups Management, SSRS, Redis Stack</li>
                 </ul>
 
-                <h3>• Language and Framework</h3>
+                <h3>• Languages & Frameworks</h3>
                 <ul>
                     <li>C#, F#, Python, Java, ASP.NET Core</li>
                 </ul>
             </div>
 
-            <h2 style="margin-top: 20px;">EDUCATION</h2>
+            <h2 style="margin-top: 12px;">EDUCATION</h2>
             <div class="education-item">
                 <div class="uni-name">UNIVERSITY OF DHAKA</div>
                 <div class="degree">B.Sc. IN COMPUTER SCIENCE AND ENGINEERING</div>
