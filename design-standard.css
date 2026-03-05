@@ -1,0 +1,7 @@
+/* Standard Design - Default Layout */
+/* This file is intentionally mostly empty as the base styles define the standard layout. */
+/* It serves as a placeholder for the "Standard" design option. */
+
+:root {
+    --navbar-height: 80px;
+}

@@ -1,0 +1,509 @@
+/* Modern SaaS / Fintech Design Layout */
+/* Inspired by the provided Finpay image */
+
+:root {
+    --border-radius-lg: 24px;
+    --border-radius-md: 16px;
+    --border-radius-sm: 8px;
+    --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.05);
+    --shadow-hover: 0 30px 60px -12px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 40px;
+}
+
+/* Navbar - Clean Top Bar */
+.navbar {
+    height: 90px;
+    background-color: var(--bg-color); /* Match theme bg */
+    border-bottom: none;
+    padding: 0;
+}
+
+.nav-container {
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    gap: 40px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Hero Section - Split Grid */
+.hero {
+    padding-top: 140px;
+    padding-bottom: 100px;
+    text-align: left;
+    min-height: auto; /* Allow content to dictate height */
+    overflow: visible; /* Allow floating elements */
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1280px;
+}
+
+.greeting {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(0,0,0,0.03); /* Subtle badge bg */
+    border-radius: 30px;
+}
+
+.name {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    max-width: 90%;
+    line-height: 1.5;
+}
+
+/* Hero Stats - Floating Cards Style */
+.hero-stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+/* Create the floating card effect */
+.hero-stat {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-stat:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Stagger the cards for visual interest */
+.hero-stat:nth-child(2) {
+    transform: translateY(40px);
+}
+.hero-stat:nth-child(2):hover {
+    transform: translateY(30px);
+}
+
+.hero-stat:nth-child(3) {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-stat .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-stat .stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+/* Section Styling */
+.section {
+    padding: 120px 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: left;
+    margin-bottom: 80px;
+    letter-spacing: -1px;
+}
+
+.section-title::after {
+    display: none; /* Remove underline */
+}
+
+/* About Section - Clean Layout */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--border-radius-lg);
+    border: none;
+    box-shadow: var(--shadow-soft);
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Experience Section - Grid Cards */
+.experience-container {
+    max-width: 100%;
+}
+
+.experience-container::before {
+    display: none; /* Remove timeline line */
+}
+
+.company-card {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    margin-bottom: 60px;
+}
+
+.company-card::before {
+    display: none; /* Remove timeline dot */
+}
+
+.company-header-row {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.company-info h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.experience-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.detail-card {
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: none;
+}
+
+.card-header {
+    border-bottom: none;
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.card-header i {
+    font-size: 2rem;
+    background-color: transparent;
+    padding: 0;
+    margin-right: 0;
+    color: var(--text-primary);
+}
+
+.card-header h5 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.detail-card ul {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.detail-card li {
+    padding-left: 24px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.detail-card li::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05); /* Subtle ring effect */
+}
+
+/* Skills Section - 3 Column Feature Grid */
+.skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.skill-category {
+    padding: 30px;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg); /* Restore card background */
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-soft);
+    border-color: var(--accent-color);
+}
+
+.skill-category h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.skill-category h3 i {
+    font-size: 1.4rem;
+    color: var(--accent-color); /* Use accent color for icons */
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    background-color: rgba(0,0,0,0.03);
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    transition: all 0.2s ease;
+}
+
+.tags span:hover {
+    background-color: var(--card-bg);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Responsive Adjustments for new grid */
+@media (max-width: 1024px) {
+    .experience-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Education Section - Big Banner */
+.education-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px;
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-alt) 100%);
+    border: 1px solid var(--border-color);
+}
+
+.edu-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius-md);
+}
+
+.edu-details h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+/* Contact Section - Dark Block Style */
+#contact {
+    padding: 80px 0;
+}
+
+.contact-container {
+    background-color: var(--text-primary); /* Invert colors */
+    color: var(--bg-color);
+    padding: 60px;
+    border-radius: var(--border-radius-lg);
+    max-width: 100%;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.contact-container .section-title {
+    color: var(--bg-color);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.contact-container .section-title::after {
+    display: none;
+}
+
+.contact-text {
+    color: var(--bg-color);
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.contact-box {
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius-md);
+    align-items: flex-start;
+}
+
+.contact-box span {
+    color: var(--bg-color);
+    font-size: 0.9rem;
+}
+
+.contact-box i {
+    color: var(--bg-color);
+    font-size: 1.2rem;
+}
+
+.contact-box:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-stats-container {
+        grid-column: 1; /* Reset grid column */
+        grid-row: auto; /* Reset grid row */
+        margin-top: 40px;
+    }
+
+    /* Reset text alignment for center layout */
+    .greeting, 
+    .name, 
+    .title, 
+    .hero-buttons, 
+    .social-links {
+        grid-column: 1;
+        justify-self: center;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .name {
+        font-size: 2.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+}

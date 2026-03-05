@@ -1,57 +1,108 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.add('hidden');
-        observer.observe(section);
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
     });
 });
+
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80, // Offset for fixed header
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Scroll Animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.section, .hero-content, .company-card, .skill-category, .education-card, .contact-box').forEach(el => {
+    el.classList.add('hidden');
+    observer.observe(el);
+});
+
+// Theme and Design Switcher Logic
+const themeBtns = document.querySelectorAll('.theme-btn');
+const designBtns = document.querySelectorAll('.design-btn');
+const themeStyleLink = document.getElementById('theme-style');
+const designStyleLink = document.getElementById('design-style');
+
+// Check for saved preferences
+const savedTheme = localStorage.getItem('portfolio-theme') || 'creamy';
+const savedDesign = localStorage.getItem('portfolio-design') || 'standard';
+
+setTheme(savedTheme);
+setDesign(savedDesign);
+
+themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const theme = btn.getAttribute('data-theme');
+        setTheme(theme);
+    });
+});
+
+designBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const design = btn.getAttribute('data-design');
+        setDesign(design);
+    });
+});
+
+function setTheme(theme) {
+    themeStyleLink.href = `theme-${theme}.css`;
+    
+    themeBtns.forEach(btn => {
+        if (btn.getAttribute('data-theme') === theme) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    localStorage.setItem('portfolio-theme', theme);
+}
+
+function setDesign(design) {
+    designStyleLink.href = `design-${design}.css`;
+    
+    designBtns.forEach(btn => {
+        if (btn.getAttribute('data-design') === design) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    localStorage.setItem('portfolio-design', design);
+}
