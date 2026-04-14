@@ -59,8 +59,8 @@ const themeStyleLink = document.getElementById('theme-style');
 const designStyleLink = document.getElementById('design-style');
 
 // Check for saved preferences
-const savedTheme = localStorage.getItem('portfolio-theme') || 'creamy';
-const savedDesign = localStorage.getItem('portfolio-design') || 'standard';
+const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+const savedDesign = localStorage.getItem('portfolio-design') || 'split';
 
 setTheme(savedTheme);
 setDesign(savedDesign);
