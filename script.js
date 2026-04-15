@@ -57,6 +57,10 @@ const themeBtns = document.querySelectorAll('.theme-btn');
 const designBtns = document.querySelectorAll('.design-btn');
 const themeStyleLink = document.getElementById('theme-style');
 const designStyleLink = document.getElementById('design-style');
+const designSwitchGroup = document.getElementById('design-switch-group');
+const themeSwitchGroup = document.getElementById('theme-switch-group');
+const designSwitchToggle = document.getElementById('design-switch-toggle');
+const themeSwitchToggle = document.getElementById('theme-switch-toggle');
 
 // Check for saved preferences
 const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
@@ -78,6 +82,18 @@ designBtns.forEach(btn => {
         setDesign(design);
     });
 });
+
+if (designSwitchGroup && themeSwitchGroup && designSwitchToggle && themeSwitchToggle) {
+    designSwitchToggle.addEventListener('click', () => {
+        designSwitchGroup.classList.toggle('expanded');
+        themeSwitchGroup.classList.remove('expanded');
+    });
+
+    themeSwitchToggle.addEventListener('click', () => {
+        themeSwitchGroup.classList.toggle('expanded');
+        designSwitchGroup.classList.remove('expanded');
+    });
+}
 
 function setTheme(theme) {
     themeStyleLink.href = `theme-${theme}.css`;

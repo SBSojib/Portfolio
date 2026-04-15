@@ -98,6 +98,120 @@
             display: none;
         }
 
+        .theme-switch-wrapper .switch-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .theme-switch-wrapper .switch-toggle {
+            border: none;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .theme-switch-wrapper .switch-toggle::after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 11px;
+            opacity: 0.75;
+            transition: transform 0.2s ease;
+        }
+
+        .theme-switch-wrapper .switch-group.expanded .switch-toggle::after {
+            transform: rotate(180deg);
+        }
+
+        .theme-switch-wrapper .switch-options {
+            display: none;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .theme-switch-wrapper .switch-group.expanded .switch-options {
+            display: flex;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.22);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .project-title {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        .project-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-title a:hover {
+            text-decoration: underline;
+        }
+
+        .project-desc {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+            opacity: 0.92;
+        }
+
+        .project-meta {
+            margin-top: auto;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: rgba(15, 23, 42, 0.45);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #7dd3fc;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .app-promo-banner {
                 left: 10px;
@@ -127,6 +241,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#applications">Applications</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -420,6 +535,123 @@
         </div>
     </section>
 
+    <section id="projects" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Agrismart" target="_blank">Agrismart</a></h3>
+                    <p class="project-desc">Academic Course Project for Application Development Lab (CSE-2216), University of Dhaka.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> Java</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 4</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Agrismart" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Bumblebee-2.0---Self-Driving-Car-" target="_blank">Bumblebee-2.0---Self-Driving-Car-</a></h3>
+                    <p class="project-desc">Academic Course Project for Microcontroller Lab (CSE-3116), University of Dhaka.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> N/A</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Bumblebee-2.0---Self-Driving-Car-" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Finding-Hospital" target="_blank">Finding-Hospital</a></h3>
+                    <p class="project-desc">A web application developed in Python using Django framework.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> HTML</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Finding-Hospital" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Image-Search" target="_blank">Image-Search</a></h3>
+                    <p class="project-desc">An AI based desktop application for searching image in device memory based on object presented in the image.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> N/A</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Image-Search" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Joby" target="_blank">Joby</a></h3>
+                    <p class="project-desc">No description available.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> C#</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Joby" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Logic-Diagram-Drawer-and-Bolean-Function-Evaluator" target="_blank">Logic-Diagram-Drawer-and-Bolean-Function-Evaluator</a></h3>
+                    <p class="project-desc">Academic Course Project for Fundamental of Programming Lab (CSE-1211), University of Dhaka.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> C</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Logic-Diagram-Drawer-and-Bolean-Function-Evaluator" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Optimizely.Assessment" target="_blank">Optimizely.Assessment</a></h3>
+                    <p class="project-desc">No description available.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> HCL</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Optimizely.Assessment" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/Portfolio" target="_blank">Portfolio</a></h3>
+                    <p class="project-desc">No description available.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> CSS</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/Portfolio" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/RockPaperScissor" target="_blank">RockPaperScissor</a></h3>
+                    <p class="project-desc">Academic Assignment for Application Development Lab (CSE-2216), University of Dhaka.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> Java</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/RockPaperScissor" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/SNS-Paribahan-Safe-and-Sound-Travel-for-You" target="_blank">SNS-Paribahan-Safe-and-Sound-Travel-for-You</a></h3>
+                    <p class="project-desc">Academic Course Project for Software Engineering Lab (CSE-3112), University of Dhaka.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> N/A</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 0</span>
+                        <a class="project-link" href="https://github.com/SBSojib/SNS-Paribahan-Safe-and-Sound-Travel-for-You" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title"><a href="https://github.com/SBSojib/StudentManagementSystem" target="_blank">StudentManagementSystem</a></h3>
+                    <p class="project-desc">Academic Course Project for Object-Oriented Programming Lab (CSE-2112), University of Dhaka.</p>
+                    <div class="project-meta">
+                        <span class="project-badge"><i class="fas fa-code"></i> Java</span>
+                        <span class="project-badge"><i class="fas fa-star"></i> 1</span>
+                        <a class="project-link" href="https://github.com/SBSojib/StudentManagementSystem" target="_blank">View Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section">
         <div class="container contact-container">
             <h2 class="section-title">Get In Touch</h2>
@@ -461,33 +693,37 @@
     </div>
 
     <div class="theme-switch-wrapper">
-        <div class="switch-group">
-            <span class="switch-label">Design</span>
-            <button class="design-btn" data-design="standard" title="Standard Layout">
-                <i class="fas fa-columns"></i>
-            </button>
-            <button class="design-btn active" data-design="split" title="Modern SaaS Layout">
-                <i class="fas fa-layer-group"></i>
-            </button>
+        <div class="switch-group" id="design-switch-group">
+            <button class="switch-toggle" id="design-switch-toggle" type="button">Design</button>
+            <div class="switch-options">
+                <button class="design-btn" data-design="standard" title="Standard Layout">
+                    <i class="fas fa-columns"></i>
+                </button>
+                <button class="design-btn active" data-design="split" title="Modern SaaS Layout">
+                    <i class="fas fa-layer-group"></i>
+                </button>
+            </div>
         </div>
         <div class="divider"></div>
-        <div class="switch-group">
-            <span class="switch-label">Theme</span>
-            <button class="theme-btn" data-theme="creamy" title="Creamy Light">
-                <i class="fas fa-sun"></i>
-            </button>
-            <button class="theme-btn active" data-theme="dark" title="Modern Dark">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="theme-btn" data-theme="corporate" title="Corporate Blue">
-                <i class="fas fa-briefcase"></i>
-            </button>
-            <button class="theme-btn" data-theme="terminal" title="Hacker Terminal">
-                <i class="fas fa-terminal"></i>
-            </button>
-            <button class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Neon">
-                <i class="fas fa-bolt"></i>
-            </button>
+        <div class="switch-group" id="theme-switch-group">
+            <button class="switch-toggle" id="theme-switch-toggle" type="button">Theme</button>
+            <div class="switch-options">
+                <button class="theme-btn" data-theme="creamy" title="Creamy Light">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="theme-btn active" data-theme="dark" title="Modern Dark">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-btn" data-theme="corporate" title="Corporate Blue">
+                    <i class="fas fa-briefcase"></i>
+                </button>
+                <button class="theme-btn" data-theme="terminal" title="Hacker Terminal">
+                    <i class="fas fa-terminal"></i>
+                </button>
+                <button class="theme-btn" data-theme="cyberpunk" title="Cyberpunk Neon">
+                    <i class="fas fa-bolt"></i>
+                </button>
+            </div>
         </div>
     </div>
 
