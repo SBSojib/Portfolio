@@ -106,3 +106,19 @@ function setDesign(design) {
     
     localStorage.setItem('portfolio-design', design);
 }
+
+// Bottom promo banner logic
+const appPromoBanner = document.getElementById('app-promo-banner');
+const appPromoCloseBtn = document.getElementById('app-promo-close');
+const appBannerClosed = localStorage.getItem('portfolio-app-banner-closed') === 'true';
+
+if (appPromoBanner && appPromoCloseBtn) {
+    if (appBannerClosed) {
+        appPromoBanner.classList.add('hidden');
+    }
+
+    appPromoCloseBtn.addEventListener('click', () => {
+        appPromoBanner.classList.add('hidden');
+        localStorage.setItem('portfolio-app-banner-closed', 'true');
+    });
+}
