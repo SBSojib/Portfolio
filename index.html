@@ -19,18 +19,53 @@
             z-index: 9999;
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            border-radius: 12px;
-            background: rgba(15, 23, 42, 0.95);
+            gap: 16px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            border: 1px solid rgba(125, 211, 252, 0.35);
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.96) 0%, rgba(30, 64, 175, 0.95) 55%, rgba(14, 116, 144, 0.95) 100%);
             color: #ffffff;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 14px 34px rgba(2, 6, 23, 0.5);
             backdrop-filter: blur(5px);
         }
 
+        .app-promo-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(56, 189, 248, 0.2);
+            color: #bae6fd;
+            font-size: 15px;
+            border: 1px solid rgba(186, 230, 253, 0.35);
+            flex-shrink: 0;
+        }
+
+        .app-promo-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .app-promo-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin: 0;
+        }
+
+        .app-promo-desc {
+            margin: 0;
+            font-size: 14px;
+            color: #e2e8f0;
+            line-height: 1.45;
+        }
+
         .app-promo-banner a {
-            color: #7dd3fc;
-            font-weight: 600;
+            color: #a5f3fc;
+            font-weight: 700;
             text-decoration: none;
         }
 
@@ -41,16 +76,44 @@
         .app-promo-close {
             margin-left: auto;
             border: none;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
-            font-size: 22px;
+            font-size: 20px;
             line-height: 1;
             cursor: pointer;
-            padding: 2px 6px;
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .app-promo-close:hover {
+            background: rgba(255, 255, 255, 0.22);
         }
 
         .app-promo-banner.hidden {
             display: none;
+        }
+
+        @media (max-width: 768px) {
+            .app-promo-banner {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+                padding: 14px;
+                gap: 10px;
+            }
+
+            .app-promo-title {
+                font-size: 15px;
+            }
+
+            .app-promo-desc {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -389,7 +452,11 @@
     </footer>
 
     <div class="app-promo-banner" id="app-promo-banner">
-        <span>Try my app: <a href="https://joby.hasibul.bd/" target="_blank">Joby - Job Tracker</a></span>
+        <span class="app-promo-badge"><i class="fas fa-rocket"></i></span>
+        <div class="app-promo-content">
+            <p class="app-promo-title">New: <a href="https://joby.hasibul.bd/" target="_blank">Joby - Job Tracker</a></p>
+            <p class="app-promo-desc">Track every job application, follow interview stages, and stay focused with a clean all-in-one dashboard.</p>
+        </div>
         <button class="app-promo-close" id="app-promo-close" aria-label="Close banner">&times;</button>
     </div>
 
