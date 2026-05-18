@@ -8,436 +8,388 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
             --accent-color: #2980b9;
-            --text-color: #333;
             --light-text: #666;
-            --border-color: #e0e0e0;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
+            background: #f5f5f5;
+            color: #111;
             font-family: 'Roboto', sans-serif;
-            line-height: 1.3;
-            color: var(--text-color);
-            background-color: #f5f5f5;
-            font-size: 9.25pt;
+            font-size: 11pt;
+            line-height: 1.15;
         }
-
-        .container {
-            max-width: 210mm; /* A4 width */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
             margin: 10px auto;
-            background: white;
-            padding: 20px 25px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            min-height: 297mm; /* A4 height */
+            padding: 14mm 14mm 12mm;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
         }
-
-        /* Header */
         header {
-            text-align: center;
             margin-bottom: 12px;
+            text-align: center;
         }
-
         h1 {
+            margin-bottom: 6px;
+            color: #000;
             font-size: 24pt;
             font-weight: 700;
-            color: #000;
-            margin-bottom: 6px;
+            line-height: 1;
             text-transform: uppercase;
         }
-
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            font-size: 9pt;
-            color: var(--light-text);
             flex-wrap: wrap;
+            gap: 12px;
+            color: var(--light-text);
+            font-size: 9pt;
         }
-
         .contact-info span {
             display: flex;
             align-items: center;
             gap: 4px;
         }
-
         .contact-info a {
             color: var(--accent-color);
             text-decoration: none;
         }
-
-        /* Layout */
-        .main-content {
-            display: flex;
-            gap: 20px;
-        }
-
-        .left-column {
-            flex: 2;
-            padding-right: 5px;
-        }
-
-        .right-column {
-            flex: 1;
-        }
-
-        /* Section Headings */
-        h2 {
-            font-size: 13pt;
-            color: #2c5ea8; /* Matches the blue in the image */
-            text-transform: uppercase;
-            border-bottom: 1px solid #eee; /* Subtle underline if needed, image doesn't show strong one but structure implies it */
-            margin-bottom: 8px;
-            margin-top: 0;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        /* Experience Section */
-        .job-header {
-            margin-bottom: 2px;
-        }
-
-        .company-name {
-            font-weight: 700;
-            color: #2c5ea8;
-            font-size: 10.5pt;
-        }
-
-        .job-title {
-            font-weight: 400;
-            color: #444;
-            font-size: 10.5pt;
-            text-transform: uppercase;
-        }
-
-        .company-desc {
-            font-size: 8pt;
-            color: #888;
-            margin-bottom: 2px;
-            font-style: italic;
-        }
-
-        .job-meta {
-            font-size: 9pt;
-            color: #666;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-
-        .experience-item {
-            margin-bottom: 10px;
-        }
-
-        .experience-sub-section {
-            margin-bottom: 5px;
-        }
-
-        .sub-section-title {
-            font-weight: 700;
-            font-size: 9.5pt;
-            margin-bottom: 2px;
-            color: #000;
-        }
-
-        ul {
-            list-style-type: disc;
-            margin-left: 25px;
-            margin-bottom: 2px;
-        }
-
-        li {
-            margin-bottom: 2px;
-            font-size: 9.25pt;
-            color: #333;
-        }
-
-        /* Skills Section */
-        .skills-section h3 {
-            font-size: 9.5pt;
-            font-weight: 700;
-            margin-bottom: 3px;
-            color: #000;
-        }
-
-        .skills-section ul {
-            margin-left: 25px;
-            margin-bottom: 8px;
-        }
-        
-        .skills-section li {
-             margin-bottom: 1px;
-        }
-
-        /* Education Section */
-        .education-item {
-            margin-bottom: 12px;
-        }
-
-        .uni-name {
-            font-weight: 700;
-            font-size: 10pt;
-            color: #333;
-            text-transform: uppercase;
-        }
-
-        .degree {
-            font-size: 9pt;
-            color: #555;
-            text-transform: uppercase;
-            margin-bottom: 1px;
-        }
-
-        .edu-meta {
-            font-size: 9pt;
-            color: #666;
-        }
-
-        /* Print Styles */
-        @page {
-            size: A4;
-            margin: 5mm; /* Small margin for print */
-        }
-
-        @media print {
-            html, body {
-                margin: 0;
-                padding: 0;
-                background: white;
-            }
-            .container {
-                box-shadow: none;
-                margin: 0;
-                padding: 5mm 5mm 0 5mm; /* Reduced top padding specifically for print */
-                width: 100%;
-                max-width: none;
-                min-height: auto;
-            }
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-            /* Ensure content doesn't break awkwardly */
-            h2, h3, .job-header, .sub-section-title {
-                page-break-after: avoid;
-            }
-            /* REMOVED page-break-inside: avoid for .experience-item to prevent massive gaps */
-            .education-item, .skills-section {
-                page-break-inside: avoid;
-            }
-        }
-        
-        /* Icons */
         .icon {
+            display: inline-block;
             width: 12px;
             height: 12px;
-            fill: currentColor;
-            display: inline-block;
-            vertical-align: middle;
             margin-right: 3px;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+        h2 {
+            margin: 8px 0 4px;
+            border-bottom: 1px solid #777;
+            color: #111;
+            font-size: 12pt;
+            font-variant: small-caps;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+        .skills-list {
+            margin-left: 18px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        .role-list {
+            list-style: none;
+            margin: 4px 0 0;
+            padding: 0;
+        }
+        .role-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 3px;
+        }
+        .role-icon {
+            flex: 0 0 14px;
+            width: 14px;
+            height: 14px;
+            margin-top: 1px;
+        }
+        .role-icon svg {
+            display: block;
+            width: 14px;
+            height: 14px;
+        }
+        .icon-defs {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+        .role-text {
+            flex: 1;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-top: 4px;
+        }
+        .entry-title {
+            font-weight: 700;
+        }
+        .entry-title a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .entry-location,
+        .entry-date {
+            white-space: nowrap;
+        }
+        .role-title {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            font-weight: 700;
+        }
+        .education-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        @page {
+            size: A4;
+            margin: 8mm;
+        }
+        @media print {
+            html,
+            body {
+                background: #fff;
+            }
+            .page {
+                width: auto;
+                min-height: auto;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>
-        <h1>MD Hasibul Islam</h1>
-        <div class="contact-info">
-            <span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Dhaka, Bangladesh
-            </span>
-            <span>|</span>
-            <span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.222-2.538-.222zm-2 0c-.864 0-1.715.102-2.538.222-.244-1.039-.397-2.136-.456-3.279h2.994v3.057zm-4.761-3.057h-3.123c.526-2.516 2.157-4.576 4.356-5.694-1.018 1.63-1.677 3.565-1.233 5.694zm7.761-8.751c2.199 1.118 3.83 3.178 4.356 5.694h-3.123c.444-2.129-.215-4.064-1.233-5.694zm-1.554 5.694c-.225-1.632-.688-3.167-1.34-4.542-.652 1.375-1.115 2.91-1.34 4.542h2.68zm-5.751 8.751c-2.199-1.118-3.83-3.178-4.356-5.694h3.123c-.444 2.129.215 4.064 1.233 5.694zm7.305 0c1.018-1.63 1.677-3.565 1.233-5.694h3.123c-.526 2.516-2.157 4.576-4.356 5.694zm-1.554-5.694h-2.68c.225 1.632.688 3.167 1.34 4.542.652-1.375 1.115-2.91 1.34-4.542z"/></svg>
-                <a href="http://hasibul.bd/">Portfolio</a>
-            </span>
-            <span>|</span>
-            <span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                <a href="https://github.com/SBSojib">GitHub</a>
-            </span>
-            <span>|</span>
-            <span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                <a href="https://linkedin.com/in/md-hasibul-islam-832214260/">LinkedIn</a>
-            </span>
-            <span>|</span>
-            <span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819v-5.818l-5.455 3.455-5.455-3.455v5.818h-3.818c-.904 0-1.636-.732-1.636-1.636v-13.909c0-.904.732-1.636 1.636-1.636 0 0 5.355 3.273 6.545 4 1.191-.727 6.545-4 6.545-4 .904 0 1.636.732 1.636 1.636z"/></svg>
-                <a href="mailto:sojib.24csedu.037@gmail.com">Gmail</a>
-            </span>
-            <span>|</span>
-            <span>
-                <svg class="icon" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.28.36-.67.25-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99h-4.16c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-4.16c0-.54-.45-.99-.99-.99z"/></svg>
-                01736500390
-            </span>
-        </div>
-    </header>
-
-    <div class="main-content">
-        <div class="left-column">
-            <h2>EXPERIENCE</h2>
-            
-            <div class="experience-item">
-                <div class="job-header">
-                    <span class="company-name">CHALDAL LIMITED</span> | <span class="job-title">INFRASTRUCTURE SOFTWARE ENGINEER</span>
-                </div>
-                <div class="company-desc">LARGEST ONLINE GROCERY SERVICE IN BANGLADESH (10M+ CUSTOMERS)</div>
-                <div class="job-meta">March 2023 – Present | Dhaka, Bangladesh</div>
-                
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Infrastructure Maintenance</div>
-                    <ul>
-                        <li>Managed 40+ mixed Windows and Linux servers across 4 data centers, achieving >99.9% availability.</li>
-                        <li>Maintained networking across 4 data centers, 2 offices, and 22 warehouses.</li>
-                        <li>Upgraded DB server storage with RAID to improve IOPS and fault tolerance.</li>
-                        <li>Installed/configured a gateway switch to create a redundant gateway path.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Application Deployment</div>
-                    <ul>
-                        <li>Designed and operated production Kubernetes clusters across multiple data centers running 50+ microservices.</li>
-                        <li>Automated CI/CD pipelines in Azure DevOps integrating container build, registry publishing, and Kubernetes deployments with zero-downtime rollouts.</li>
-                        <li>Managed Kubernetes networking, TLS certificates, secrets, and service exposure through Ingress and internal routing.</li>
-                        <li>Troubleshot complex production issues involving cluster networking, API connectivity, and pod lifecycle failures.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Cloud Infrastructure – Microsoft Azure</div>
-                    <ul>
-                        <li>Managed Azure cloud resources including Virtual Machines, networking, and storage supporting production workloads</li>
-                        <li>Automated infrastructure and operational tasks using Azure CLI, Service Principals, and Azure DevOps pipelines.</li>
-                        <li>Implemented monitoring and diagnostics using Azure Application Insights for production applications.</li>
-                        <li>Saved $1,000/month via Azure cost optimization (Re-architected Azure Storage network path (Private Endpoint → secure Public access with allow-listed networks to eliminate Private Link charges)</li>
-                    </ul>
-                </div>
-
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Database Maintenance</div>
-                    <ul>
-                        <li>Configured a 4-replica SQL Server Availability Group for continuous service.</li>
-                        <li>Implemented automated onsite backups (20+ DBs) with a 99.9% success rate and encrypted offsite copies in Azure, reducing RPO to &lt;15 min.</li>
-                        <li>Deployed air-gapped backups on isolated servers, ensuring extra security.</li>
-                        <li>Reduced backup storage by 50% via automated cleanup and a custom backup cleaner.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Identity & Directory Services</div>
-                    <ul>
-                        <li>Set up on-prem AD → Azure AD (Entra ID) synchronization.</li>
-                        <li>Deployed an offsite Read-Only Domain Controller (RODC) to improve security and local authentication.</li>
-                        <li>Integrated 160+ workstations for seamless domain access, automated software installs via GPOs.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Monitoring & Logging</div>
-                    <ul>
-                        <li>Deployed a self-hosted Checkmk stack for hosts, apps, database backups, networks, and hardware.</li>
-                        <li>Set up Azure Application Insights and Log Analytics, configured 20+ alerts for cost spikes and app issues</li>
-                        <li>Integrated SQL Server logs with Azure Arc for centralized monitoring.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-sub-section">
-                    <div class="sub-section-title">• Automation and Documentation</div>
-                    <ul>
-                        <li>Authored 30+ PowerShell, Bash, and Python scripts to automate patching, backup rotation, and certificate renewal, cutting repetitive workload by 30%.</li>
-                        <li>Developed and maintained 25+ SOPs and runbooks (backup validation, incident response, VM provisioning), accelerated onboarding for junior admins.</li>
-                    </ul>
+    <main class="page">
+        <header>
+            <h1>MD Hasibul Islam</h1>
+            <div class="contact-info">
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    Dhaka, Bangladesh
+                </span>
+                <span>|</span>
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.222-2.538-.222zm-2 0c-.864 0-1.715.102-2.538.222-.244-1.039-.397-2.136-.456-3.279h2.994v3.057zm-4.761-3.057h-3.123c.526-2.516 2.157-4.576 4.356-5.694-1.018 1.63-1.677 3.565-1.233 5.694zm7.761-8.751c2.199 1.118 3.83 3.178 4.356 5.694h-3.123c.444-2.129-.215-4.064-1.233-5.694zm-1.554 5.694c-.225-1.632-.688-3.167-1.34-4.542-.652 1.375-1.115 2.91-1.34 4.542h2.68zm-5.751 8.751c-2.199-1.118-3.83-3.178-4.356-5.694h3.123c-.444 2.129.215 4.064 1.233 5.694zm7.305 0c1.018-1.63 1.677-3.565 1.233-5.694h3.123c-.526 2.516-2.157 4.576-4.356 5.694zm-1.554-5.694h-2.68c.225 1.632.688 3.167 1.34 4.542.652-1.375 1.115-2.91 1.34-4.542z"/></svg>
+                    <a href="http://hasibul.bd/">Portfolio</a>
+                </span>
+                <span>|</span>
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <a href="https://github.com/SBSojib">GitHub</a>
+                </span>
+                <span>|</span>
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://linkedin.com/in/md-hasibul-islam-832214260/">LinkedIn</a>
+                </span>
+                <span>|</span>
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819v-5.818l-5.455 3.455-5.455-3.455v5.818h-3.818c-.904 0-1.636-.732-1.636-1.636v-13.909c0-.904.732-1.636 1.636-1.636 0 0 5.355 3.273 6.545 4 1.191-.727 6.545-4 6.545-4 .904 0 1.636.732 1.636 1.636z"/></svg>
+                    <a href="mailto:sojib.24csedu.037@gmail.com">Gmail</a>
+                </span>
+                <span>|</span>
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.44-5.15-3.75-6.59-6.59l1.97-1.57c.27-.28.36-.67.25-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99h-4.16c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-4.16c0-.54-.45-.99-.99-.99z"/></svg>
+                    01736500390
+                </span>
+            </div>
+        </header>
+        <section>
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li><strong>Platforms and Tools:</strong> Kubernetes, Helm, Docker, Hyper-V, Azure DevOps CI/CD, GitHub Actions, Terraform, Ansible</li>
+                <li><strong>Cloud:</strong> Azure VMs, VNets, NSGs/Firewalls, Route Tables, Azure Storage, Private Endpoints, Azure Arc, AWS EC2, RDS, S3</li>
+                <li><strong>Monitoring:</strong> Checkmk, Azure Monitor, Log Analytics, KQL, Application Insights, Azure Monitor alerts</li>
+                <li><strong>Operating Systems:</strong> Windows Server 2019/2022, Ubuntu Server 20.04/24.04</li>
+                <li><strong>Identity Services:</strong> Microsoft Active Directory, Azure Entra ID</li>
+                <li><strong>Databases:</strong> SQL Server 2019/2022, High Availability Clustering, DB Backups, SSRS, Redis Stack</li>
+                <li><strong>Scripting and Development:</strong> PowerShell, Bash, Python, C#, F#, Java, ASP.NET Core</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Work Experience</h2>
+            <div class="entry-header">
+                <div><span class="entry-title"><a href="https://chaldal.com/">Chaldal Limited</a></span> | Largest Online Grocery Service in Bangladesh</div>
+                <div class="entry-location">Dhaka, Bangladesh</div>
+            </div>
+            <div class="role-title">
+                <div>Infrastructure Software Engineer</div>
+                <div class="entry-date">Mar 2023 - Present</div>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-defs" aria-hidden="true" focusable="false">
+                <symbol id="icon-infra" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="4.5" rx="1" fill="#4A90D9"/>
+                    <rect x="3" y="9.75" width="18" height="4.5" rx="1" fill="#5BA55B"/>
+                    <rect x="3" y="15.5" width="18" height="4.5" rx="1" fill="#4A90D9"/>
+                    <circle cx="6" cy="6.25" r="0.8" fill="#fff"/>
+                    <circle cx="6" cy="12" r="0.8" fill="#fff"/>
+                    <circle cx="6" cy="17.75" r="0.8" fill="#fff"/>
+                </symbol>
+                <symbol id="icon-k8s" viewBox="0 0 24 24">
+                    <path fill="#326CE5" d="M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97l-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z"/>
+                </symbol>
+                <symbol id="icon-azure" viewBox="0 0 24 24">
+                    <path fill="#0078D4" d="M5.2 18.9h13.6L17.9 6.8l-3.1 4.6-3.7-6.1L5.2 18.9z"/>
+                    <path fill="#50E6FF" d="M10.2 18.9h7.8L13.5 5.1l-3.1 5.1 3.4 5.6-3.6 3.1z"/>
+                    <path fill="#0078D4" d="M5.2 18.9h5.1L8.9 12.3 5.2 18.9z"/>
+                </symbol>
+                <symbol id="icon-aws" viewBox="0 0 24 24">
+                    <path fill="#FF9900" d="M5.25 15.75c3.75 3 8.99 3.43 13.19 1.87.59-.24 1.08.49.49.77C14.18 20.19 7.31 19.68 3.04 15.99c-.44-.38-.04-1.07.48-.78 1.27.82 2.77 1.41 4.73 1.54z"/>
+                    <path fill="#FF9900" d="M6.76 14.18c-.48-.62-2.45-.8-3.38-.37-.12.06-.14.2-.03.27 1.03.61 2.97 1.07 3.32 1.29.35.22.03.7-.34.87-1.56.74-4.41 1.41-6.84 1.41-.57 0-1.03-.04-1.45-.09-.19-.59.05-1.17.5-1.45 2.53-1.56 5.98-1.8 9.15-.71.44.15.26.86-.19.76-1.48-.34-3.11-.42-4.64-.28z"/>
+                </symbol>
+                <symbol id="icon-gcp" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M12.19 10.36h5.54l-2.78-4.47C13.98 4.88 12.54 4.2 11 4.2 8.09 4.2 5.74 6.55 5.74 9.46c0 .76.17 1.48.47 2.13l5.98-1.23z"/>
+                    <path fill="#34A853" d="M5.74 12.81c0 2.91 2.35 5.26 5.26 5.26 1.54 0 2.98-.67 3.95-1.82l-2.58-2.2-4.63 1.92c-.57-1.51-.17-3.22 1-4.16z"/>
+                    <path fill="#FBBC05" d="M11 4.2c-.65 0-1.27.12-1.84.34l2.2 4.02h5.37C15.53 6 13.44 4.2 11 4.2z"/>
+                    <path fill="#EA4335" d="M18.73 13.18h-6.81l-1.05 3.87c1.18.45 2.48.68 3.83.68 2.91 0 5.26-2.35 5.26-5.26 0-.44-.06-.87-.17-1.29z"/>
+                </symbol>
+                <symbol id="icon-database" viewBox="0 0 24 24">
+                    <ellipse cx="12" cy="5.5" rx="7.5" ry="2.8" fill="#CC2929"/>
+                    <path fill="#E81123" d="M4.5 5.5v13c0 1.55 3.36 2.8 7.5 2.8s7.5-1.25 7.5-2.8v-13H4.5z"/>
+                    <ellipse cx="12" cy="12" rx="7.5" ry="2.8" fill="#FFFFFF" opacity="0.18"/>
+                    <ellipse cx="12" cy="18.5" rx="7.5" ry="2.8" fill="#A4262C"/>
+                </symbol>
+                <symbol id="icon-identity" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="8" height="8" fill="#F25022"/>
+                    <rect x="13" y="3" width="8" height="8" fill="#7FBA00"/>
+                    <rect x="3" y="13" width="8" height="8" fill="#00A4EF"/>
+                    <rect x="13" y="13" width="8" height="8" fill="#FFB900"/>
+                </symbol>
+                <symbol id="icon-monitor" viewBox="0 0 24 24">
+                    <rect x="3" y="12" width="3.5" height="9" rx="0.5" fill="#0078D4"/>
+                    <rect x="8.5" y="8" width="3.5" height="13" rx="0.5" fill="#50E6FF"/>
+                    <rect x="14" y="5" width="3.5" height="16" rx="0.5" fill="#7FBA00"/>
+                    <rect x="19.5" y="10" width="3.5" height="11" rx="0.5" fill="#FFB900"/>
+                </symbol>
+                <symbol id="icon-automation" viewBox="0 0 24 24">
+                    <path fill="#F05123" d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.05-.7-1.65-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.6.24-1.15.56-1.65.94l-2.39-.96c-.22-.09-.47-.02-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.05.7 1.65.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.6-.24 1.15-.56 1.65-.94l2.39.96c.22.08.47.01.59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+                </symbol>
+                <symbol id="icon-docs" viewBox="0 0 24 24">
+                    <path fill="#2563EB" d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"/>
+                    <path fill="#93C5FD" d="M14 2v6h6"/>
+                    <path fill="#DBEAFE" d="M8 13h8v2H8zm0 4h8v2H8z"/>
+                </symbol>
+            </svg>
+            <ul class="role-list">
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-k8s"/></svg></span>
+                    <span class="role-text">Designed and operated Kubernetes clusters across 3 data centers running 50+ microservices.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-k8s"/></svg></span>
+                    <span class="role-text">Automated CI/CD pipelines in Azure DevOps integrating container build, registry publishing, and Kubernetes deployments with zero-downtime rollouts.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-azure"/></svg></span>
+                    <span class="role-text">Managed Azure cloud resources including virtual machines, networking, and storage supporting production workloads.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-azure"/></svg></span>
+                    <span class="role-text">Implemented monitoring and diagnostics using Azure Application Insights for production applications.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-azure"/></svg></span>
+                    <span class="role-text">Saved $1,000/month by re-architecting Azure Storage network access from Private Endpoint to secure public access with allow-listed networks.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"/></svg></span>
+                    <span class="role-text">Configured a 4-replica SQL Server Availability Group for continuous service.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"/></svg></span>
+                    <span class="role-text">Implemented automated onsite backups for 20+ databases with a 99.9% success rate and encrypted offsite copies in Azure, reducing RPO to under 15 minutes.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"/></svg></span>
+                    <span class="role-text">Deployed air-gapped backups on isolated servers to strengthen recovery security.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-database"/></svg></span>
+                    <span class="role-text">Reduced backup storage by 50% through automated cleanup and a custom backup cleaner.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-infra"/></svg></span>
+                    <span class="role-text">Managed 40+ mixed Windows and Linux servers across 4 data centers, achieving 99.9% availability.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-infra"/></svg></span>
+                    <span class="role-text">Maintained networking across 4 data centers, 2 offices, and 22 warehouses.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-identity"/></svg></span>
+                    <span class="role-text">Set up on-prem Active Directory to Azure AD (Entra ID) synchronization.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-identity"/></svg></span>
+                    <span class="role-text">Integrated 160+ workstations for domain access and automated software installation through GPOs.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-monitor"/></svg></span>
+                    <span class="role-text">Deployed a self-hosted Checkmk stack for hosts, applications, backups, networks, and hardware.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-monitor"/></svg></span>
+                    <span class="role-text">Set up Azure Application Insights, configuring 20+ alerts for cost spikes and application issues.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-monitor"/></svg></span>
+                    <span class="role-text">Integrated SQL Server logs with Azure Arc for centralized monitoring.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-automation"/></svg></span>
+                    <span class="role-text">Authored 30+ PowerShell, Bash, and Python scripts to automate patching, backup rotation, and certificate renewal, cutting repetitive workload by 30%.</span>
+                </li>
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-docs"/></svg></span>
+                    <span class="role-text">Developed and maintained 25+ SOPs and runbooks for backup validation, incident response, and VM provisioning, accelerating onboarding for junior admins.</span>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <div class="entry-header">
+                <div><span class="entry-title">Joby</span> | Track Your Job Search Progress</div>
+                <div class="entry-location">
+                    <a href="https://joby.hasibul.bd/">joby.hasibul.bd</a> |
+                    <a href="https://github.com/SBSojib/Joby">GitHub</a>
                 </div>
             </div>
-        </div>
-
-        <div class="right-column">
-            <h2>SKILLS</h2>
-            <div class="skills-section">
-                <h3>• Platforms and Tools</h3>
-                <ul>
-                    <li>Kubernetes, Helm, Docker</li>
-                    <li>Hyper-V</li>
-                    <li>Azure DevOps CI/CD</li>
-                    <li>Github Actions</li>
-                    <li>Terraform</li>
-                    <li>Ansible</li>
-                </ul>
-
-                <h3>• Cloud (Azure & AWS)</h3>
-                <ul>
-                    <li>Azure VMs, VNets, NSGs/Firewalls, Route Tables</li>
-                    <li>Azure Storage (Blob, immutability, lifecycle management)</li>
-                    <li>Private Endpoints vs. secure Public access</li>
-                    <li>Azure Arc</li>
-                    <li>Log Analytics & KQL, Application Insights</li>
-                    <li>Azure Monitor alerts</li>
-                    <li>AWS EC2, RDS, S3</li>
-                </ul>
-
-                <h3>• Operating Systems</h3>
-                <ul>
-                    <li>Windows (Windows Server 2019/2022)</li>
-                    <li>Linux (Ubuntu Server 20.04/24.04)</li>
-                </ul>
-
-                <h3>• Identity Services</h3>
-                <ul>
-                    <li>Microsoft Active Directory</li>
-                    <li>Azure Entra ID</li>
-                </ul>
-
-                <h3>• Networking</h3>
-                <ul>
-                    <li>Load Balancers, WireGuard VPN</li>
-                    <li>DHCP / DNS, BGP</li>
-                </ul>
-
-                <h3>• Scripting</h3>
-                <ul>
-                    <li>PowerShell, Bash, Python</li>
-                </ul>
-
-                <h3>• Monitoring</h3>
-                <ul>
-                    <li>Checkmk, Azure Monitor</li>
-                </ul>
-
-                <h3>• Databases</h3>
-                <ul>
-                    <li>SQL Server 2019 / 2022</li>
-                    <li>High Availability Clustering</li>
-                    <li>DB Backups Management</li>
-                    <li>SSRS</li>
-                    <li>Redis Stack</li>
-                </ul>
-
-                <h3>• Language and Framework</h3>
-                <ul>
-                    <li>C#, F#, Python, Java, ASP.NET Core</li>
-                </ul>
+            <ul class="role-list">
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-aws"/></svg></span>
+                    <span class="role-text">Architected and provisioned production-grade AWS infrastructure on EKS with Terraform, multi-AZ VPC and RDS PostgreSQL, ALB + WAFv2, ECR, Secrets Manager, IRSA-based IAM, and centralized security monitoring (CloudTrail, GuardDuty, Security Hub, Config).</span>
+                </li>
+            </ul>
+            <div class="entry-header">
+                <div><span class="entry-title">GCPLab</span></div>
+                <div class="entry-location">
+                    <a href="https://github.com/SBSojib/GCPLab.Project">GitHub</a>
+                </div>
             </div>
-
-            <h2 style="margin-top: 15px;">EDUCATION</h2>
-            <div class="education-item">
-                <div class="uni-name">UNIVERSITY OF DHAKA</div>
-                <div class="degree">B.Sc. IN COMPUTER SCIENCE AND ENGINEERING</div>
-                <div class="edu-meta">Jan 2018 – Dec 2022 | Dhaka, Bangladesh</div>
+            <ul class="role-list">
+                <li class="role-item">
+                    <span class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-gcp"/></svg></span>
+                    <span class="role-text">Designed and automated a production-style GCP platform on private GKE with Terraform (VPC, Cloud NAT, Workload Identity, Secret Manager, Artifact Registry, GCS state), GitHub Actions OIDC CI/CD, Helm deployments, and Google Managed Prometheus plus Cloud Logging observability for a containerized ASP.NET Core service.</span>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Education</h2>
+            <div class="education-meta">
+                <div><strong>University of Dhaka</strong>, Dhaka, Bangladesh</div>
+                <div class="entry-date">Jan 2018 - Dec 2022</div>
             </div>
-        </div>
-    </div>
-</div>
-
+            <div>B.Sc. in Computer Science and Engineering</div>
+        </section>
+    </main>
 </body>
 </html>
